@@ -1,4 +1,4 @@
-// Function to determine if a given number is prime
+// Function to determine if a number is prime
 function isPrime(number) {
     // Handle special cases
     if (number <= 1) {
@@ -8,19 +8,19 @@ function isPrime(number) {
         return true; // 2 and 3 are prime
     }
     
-    // Check divisibility by 2 and 3
+    // Check divisibility by 2 and 3; if it is it means its not prime
     if (number % 2 === 0 || number % 3 === 0) {
-        return false; // Divisible by 2 or 3 = not prime
+        return false; // 
     }
     return true; // If none of the conditions matched, the number is prime
 }
 
 // Function to find factors of a given number
 function findFactors(number) {
-    const factors = []; // Initialize an array to store factors
+    const factors = []; // Array to store factors
     for (let i = 1; i <= number; i++) {
         if (number % i === 0) {
-            factors.push(i); // If i divides number evenly, it's a factor
+            factors.push(i); // If number divides by i evenly, it's a factor
         }
     }
     return factors; // Return the array of factors
