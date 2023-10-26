@@ -1,19 +1,5 @@
 // Function to determine if a number is prime
-function isPrime(number) {
-    // Handle special cases
-    if (number <= 1) {
-        return false; // 0 and 1 are not prime
-    }
-    if (number <= 3) {
-        return true; // 2 and 3 are prime
-    }
-    
-    // Check divisibility by 2 and 3; if it is it means its not prime
-    if (number % 2 === 0 || number % 3 === 0) {
-        return false; // 
-    }
-    return true; // If none of the conditions matched, the number is prime
-}
+const isPrime = number => findFactors(number).length === 2;
 
 // Function to find factors of a given number
 function findFactors(number) {
@@ -25,6 +11,18 @@ function findFactors(number) {
     }
     return factors; // Return the array of factors
 }
+
+function findPrimesBetween(min, max) {
+  const primeNumbers = [];
+  for(let i=min; i<=max;i++){
+    if (isPrime(i)){
+      primeNumbers.push(i);
+    }
+  }
+  return primeNumbers;
+}
+
+// alert(findPrimesBetween(1, 300))
 
 // Wait for the DOM to be fully loaded before executing the code
 document.addEventListener('DOMContentLoaded', () => {
